@@ -103,6 +103,97 @@
         </section>
     </main>
     
+	<div class="order">
+	<header>
+		<h1>Сделать заказ</h1>
+	</header>
+	
+	<form id="form" method="POST" action="https://httpbin.org/post">
+		<div class="order-section">
+			<h2>Ваш заказ</h2>
+			<div class="order-form">
+				<label for="soup">Суп</label>
+				<select id="soup" name="soup" required>
+					<option value="" selected disabled>- Выберите суп -</option>
+					<option value="GaspachoSup">Гаспачо</option>
+					<option value="MushroomSup">Грибной суп-пюре</option>
+					<option value="NorwaySup">Норвежский суп</option>
+				</select>
+			</div>
+			<div class="order-form">
+				<label for="bludo" >Главное блюдо</label>
+				<select id="bludo" name="dish" required>
+					<option value="" selected disabled>- Выберите главное блюдо -</option>
+					<option value="PotatoMushroom">Жаренная картошка с грибами</option>
+					<option value="Lazanya">Лазанья</option>
+					<option value="KotletiChiken">Котлеты из курицы с картофельным пюре</option>
+				</select>
+			</div>
+			<div class="order-form">
+				<label for="drink">Напиток</label>
+				<select id="drink" name="drink" required>
+					<option value="" selected disabled>- Выберите напиток -</option>
+					<option value="OrangeDrink">Апельсиновый сок</option>
+					<option value="AppleDrink">Яблочный сок</option>
+					<option value="CarrotDrink">Морковный сок</option>
+				</select>
+			</div>
+			<div class="order-form">
+				<label for="comment">Коментарий к заказу</label>
+				<textarea id="comments" placeholder="Ваши пожелания или особые указания" name="description"></textarea>
+			</div>
+		</div>
+		<div class="order-section">
+			<h2>Ваши данные</h2>
+			<div class="order-form">
+				<label for="name">Имя</label>
+				<input type="text" id="name" name="name" required placeholder="Ваше имя">
+			</div>
+			<div class="order-form">
+				<label for="email">Email</label>
+				<input type="email" id="email" name="email" required placeholder="Ваш Email">
+			</div>
+			<div class="checkbox-form">
+				<input type="checkbox" name="promotion" id="promotion">
+				<label for="promotion">Получать информацию о скидках и акциях</label>
+			</div>
+			<div class="order-form">
+				<label for="PhoneNumber">Номер телефона</label>
+				<input type="tel" id="PhoneNumber" name="PhoneNumber" required placeholder="Ваш номер телефона">
+			</div>
+			<div class="order-form">
+				<label for="address">Адрес доставки</label>
+				<input type="text" id="address" name="address" required placeholder="Укажите адрес доставки">
+				<label for="address" class="deliverMoscow">Доставка только по Москве</label>
+			</div>
+				
+			<div class="form-group">
+                    <label>Время доставки:</label>
+                    
+                    <div class="radio-option">
+                        <input type="radio" id="time-asap" name="delivery-time" value="asap" checked>
+                        <label for="time-asap">Как можно скорее</label>
+                    </div>
+						
+                    <div class="radio-option">
+                        <input type="radio" id="time-specified" name="delivery-time" value="specified">
+                        <label for="time-specified">К указанному времени</label>
+                    </div>
+					<label for="delivery-time" id="delivery-time-label">Укажите время доставки</label>
+					<input min="07:00" max="23:00" step="300" type="time" id="delivery-time" name="delivery-time-specific" placeholder="Введите время доставки" min="07:00" max="23:00" step="300">
+					
+					<div class="buttons"> 
+							<button class="reset-button" type="reset">Сбросить</button>
+							<button class="submit-button" type="submit">Отправить заказ</button>
+					</div>
+                </div>
+            </div>
+            
+		</div>
+	</form>
+	<script src="./scripts/make_lunch.js" defer></script>
+	</div>
+	
     <footer>
         <p>© 2023 Food Construct. Все права защищены.</p>
         <div class="contact-info">

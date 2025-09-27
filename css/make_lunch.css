@@ -183,5 +183,78 @@
             nav a {
                 font-size: 22px;
             }
-        }
+        } 
 		
+		
+		#form {
+			display: flex;
+			justify-content: space-between;
+			margin-top: 20px;
+			margin-left: 10%;
+			margin-right: 10%;
+			font-size: 1.3rem;
+			margin-bottom: 20px;
+		}
+		.order-section {
+			padding-left: 2%;
+			padding-right: 2%;
+			width: 48%;
+			background-color: #fff;
+			filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+			border-radius: 10%;
+		}
+		
+		.order-section h2 {
+			text-align: center;
+		}
+		label {
+			display: block;
+			
+		}
+		select, input {
+			width: 100%;
+			padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+		}
+		textarea {
+			width: 100%;
+			padding-bottom: 250px;
+            border: 1px solid #ccc;
+            border-radius: 10px;	
+			resize: none;
+		}
+
+		.checkbox-form, .radio-option {
+			margin-top: 10px;
+			display: flex;
+			font-size: 1.rem;
+			text-align: center;
+			align-items: center;
+			
+		}
+		.checkbox-form input, .radio-option input{
+			width: 10%;
+		}
+		.checkbox-form label, .radio-option label {
+			margin-top: -15px;
+		}
+		
+		.deliverMoscow {
+			font-size: 14px;
+			font-family: cursive;
+			margin-top: -15px;
+		}
+		.buttons {
+			display: flex;
+			justify-content: center;
+			gap: 30px;
+		}
+		.reset-button, .submit-button {
+			padding: 10px 30px;
+			margin-bottom: 20px;
+			border: 1px solid;
+            border-radius: 10px;
+            cursor: pointer;
+		}

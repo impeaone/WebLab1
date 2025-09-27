@@ -16,24 +16,34 @@
             padding: 20px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+		
         h1 {
             color: #e74c3c;
             margin-bottom: 20px;
             text-align: center;
+            font-size: 2.5rem;
         }
         
         nav {
             display: flex;
             justify-content: center;
             gap: 30px;
+            flex-wrap: wrap;
         }
         
         nav a {
             text-decoration: none;
             color: #333;
-            font-weight: 500px;
+            font-weight: 500;
             font-size: 18px;
+            padding: 5px 10px;
         }
         
         nav a:hover {
@@ -78,7 +88,6 @@
         }
         
         ul {
-
             padding-left: 20px;
         }
         
@@ -128,4 +137,55 @@
         .contact-info {
             font-size: 18px;
             margin-top: 15px;
+        }
+		#active{
+			color: #ff7f70;
+		}
+		
+		/* Медиа-запрос для ≤800px */
+        @media (max-width: 800px) {
+            .about-image img {
+                width: 500px;
+            }
+            
+            nav {
+                justify-content: space-between;
+            }
+            
+            h1 {
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            nav a {
+                font-size: 22px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image img {
+                width: 100%;
+            }
+            
+            table {
+                font-size: 14px;
+        }
+        
+        @media (max-width: 400px) {
+            table {
+                font-size: 12px; 
+            }
+            
+            nav a {
+                font-size: 20px;
+            }
         }
