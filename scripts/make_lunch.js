@@ -17,3 +17,5 @@ radio2.addEventListener('change', function () {
 		timeBox.style.display = "flex";
 	}
 });
+
+let total = 0;

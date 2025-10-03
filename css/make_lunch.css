@@ -258,3 +258,6 @@
             border-radius: 10px;
             cursor: pointer;
 		}
+		#OrderSoup, #OrderMain, #OrderDrink, #OrderCost {
+			display: none;
+		}
