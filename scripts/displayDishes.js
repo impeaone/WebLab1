@@ -1,7 +1,10 @@
 
 function displayDishes() {
-	//const sortedDishes = [...dishes].sort((a, b) => a.name.localCompare(b.name));
-	const sortedDishes = dishes;
+	const sortedDishes = dishes.sort((a, b) => {
+			if (a.name < b.name) return -1;
+			if (a.name > b.name) return 1;
+			return 0;
+		});
 	const soupSection = document.querySelector('.soups');
 	const mainsSection = document.querySelector('.mains');
 	const drinksSection = document.querySelector('.drinks');
