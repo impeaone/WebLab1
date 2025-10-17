@@ -19,7 +19,91 @@
             </nav>
         </div>
     </header>
+	<h1 id="combos-h1">Доступные для заказа комбо</h1>
+	<div class="combos">
+		<div class="combo">
+			<div class="combo-item">
+				<img src="./assets/combo_bar/soup.png" alt="Суп">
+				<p>Суп</p>
+			</div>
+			<div class="combo-item">
+				<img src="./assets/combo_bar/main.png" alt="Главное блюдо">
+				<p>Главное блюдо</p>
+			</div>
+			<div class="combo-item">
+				<img src="./assets/combo_bar/salad.png" alt="Салат">
+				<p>Салат</p>
+			</div>
+			<div class="combo-item">
+				<img src="./assets/combo_bar/drink.png" alt="Напиток">
+				<p>Напиток</p>
+			</div>
+		</div>
     
+		<div class="combo">
+			<div class="combo-item">
+				<img src="./assets/combo_bar/soup.png" alt="Суп">
+				<p>Суп</p>
+			</div>
+			<div class="combo-item">
+				<img src="./assets/combo_bar/main.png" alt="Главное блюдо">
+				<p>Главное блюдо</p>
+			</div>
+			<div class="combo-item">
+				<img src="./assets/combo_bar/drink.png" alt="Напиток">
+				<p>Напиток</p>
+			</div>
+		</div>
+    
+		<div class="combo">
+			<div class="combo-item">
+				<img src="./assets/combo_bar/soup.png" alt="Суп">
+				<p>Суп</p>
+			</div>
+			<div class="combo-item">
+				<img src="./assets/combo_bar/salad.png" alt="Салат">
+				<p>Салат</p>
+			</div>
+			<div class="combo-item">
+				<img src="./assets/combo_bar/drink.png" alt="Напиток">
+				<p>Напиток</p>
+			</div>
+		</div>
+		
+		<div class="combo">
+			<div class="combo-item">
+				<img src="./assets/combo_bar/main.png" alt="Главное блюдо">
+				<p>Главное блюдо</p>
+			</div>
+			<div class="combo-item">
+				<img src="./assets/combo_bar/salad.png" alt="Салат">
+				<p>Салат</p>
+			</div>
+			<div class="combo-item">
+				<img src="./assets/combo_bar/drink.png" alt="Напиток">
+				<p>Напиток</p>
+			</div>
+		</div>
+    
+		<div class="combo">
+			<div class="combo-item">
+				<img src="./assets/combo_bar/main.png" alt="Главное блюдо">
+				<p>Главное блюдо</p>
+			</div>
+			<div class="combo-item">
+				<img src="./assets/combo_bar/drink.png" alt="Напиток">
+				<p>Напиток</p>
+			</div>
+		</div>
+    
+		<div class="combo">
+			<div class="combo-item">
+				<img src="./assets/combo_bar/desert.png" alt="Десерт">
+				<p>Десерт</p>
+				<p class="dessert-note">(Можно добавить к любому заказу)</p>
+			</div>
+		</div>
+	</div>
     <main>
         <section class="soups">
             <h2>Выберите суп</h2>
@@ -33,6 +117,13 @@
         <section class="drinks">
             <h2>Выберите напиток</h2>
         </section>
+		<section class="salads">
+			<h2>Выберите салат или стартер</h2>
+		</section>
+
+		<section class="desserts">
+			<h2>Выберите десерт</h2>
+		</section>
     </main>
     
 	<div class="order">
@@ -58,6 +149,18 @@
 				<p id="drink">Напиток не выбран</p>
 				<input type='hidden' id="BuyDrink" name="BuyDrink" value="none">
 			</div>
+			
+			<div class="order-form" id="OrderSalad" style="display: none;">
+				<label for="salad" style="font-weight: bold;">Салат/Стартер</label>
+				<p id="salad">Блюдо не выбрано</p>
+				<input type='hidden' id="BuySalad" name="BuySalad" value="none">
+			</div>
+			<div class="order-form" id="OrderDessert" style="display: none;">
+				<label for="dessert" style="font-weight: bold;">Десерт</label>
+				<p id="dessert">Блюдо не выбрано</p>
+				<input type='hidden' id="BuyDessert" name="BuyDessert" value="none">
+			</div>
+			
 			<p id="nan">Ничего не выбрано</p>
 			<div class="order-form" id="OrderCost">
 				<label for="cost" style="font-weight: bold;">Цена покупки</label>
@@ -129,5 +232,7 @@
 	<script src="./scripts/dishes.js" defer></script>
 	<script src="./scripts/make_lunch.js" defer></script>
 	<script src="./scripts/order.js"></script>
+	<script src="./scripts/filters.js" defer></script>
+	<script src="./scripts/validation.js" defer></script>
 </body>
 </html>
