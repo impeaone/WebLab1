@@ -1,42 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('form');
-    
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const isValid = validateOrder();
-        
-        if (isValid) {
-            form.submit();
-        }
-    });
-});
-
-function validateOrder() {
-    const selectedDishes = getSelectedDishes();
-    
-    const isValidCombo = checkCombo(selectedDishes);
-    
-    if (!isValidCombo) {
-        showNotification(selectedDishes);
-        return false;
-    }
-    
-    return true;
-}
-
-function getSelectedDishes() {
-    const selected = {
-        soup: document.getElementById('BuySoup').value !== 'none',
-        main: document.getElementById('BuyMain').value !== 'none',
-        salad: document.getElementById('BuySalad').value !== 'none',
-        drink: document.getElementById('BuyDrink').value !== 'none',
-        dessert: document.getElementById('BuyDessert').value !== 'none'
-    };
-    
-    return selected;
-}
-
+// Функции проверки комбо
 function checkCombo(selected) {
     const validCombos = [
         // Комбо 1: Суп + Главное + Салат + Напиток
@@ -60,7 +22,6 @@ function checkCombo(selected) {
         { soup: false, main: true, salad: false, drink: true, dessert: true }
     ];
     
-    // Проверка на соответствие
     return validCombos.some(combo => 
         combo.soup === selected.soup &&
         combo.main === selected.main &&
@@ -69,11 +30,48 @@ function checkCombo(selected) {
     );
 }
 
+function getNotificationType(selectedDishes) {
+    const hasSoup = selectedDishes.soup;
+    const hasMain = selectedDishes.main;
+    const hasSalad = selectedDishes.salad;
+    const hasDrink = selectedDishes.drink;
+    const hasDessert = selectedDishes.dessert;
+    
+    // 1. Ничего не выбрано
+    if (!hasSoup && !hasMain && !hasSalad && !hasDrink && !hasDessert) {
+        return 'nothing';
+    }
+    
+    // 2. Выбраны все необходимые блюда, кроме напитка
+    if ((hasSoup && hasMain && hasSalad && !hasDrink) ||
+        (hasSoup && hasMain && !hasSalad && !hasDrink) ||
+        (hasSoup && !hasMain && hasSalad && !hasDrink) ||
+        (!hasSoup && hasMain && hasSalad && !hasDrink) ||
+        (!hasSoup && hasMain && !hasSalad && !hasDrink)) {
+        return 'drink';
+    }
+    
+    // 3. Выбран суп, но не выбраны главное блюдо/салат/стартер
+    if (hasSoup && !hasMain && !hasSalad) {
+        return 'main_salad';
+    }
+    
+    // 4. Выбран салат/стартер, но не выбраны суп/главное блюдо
+    if (hasSalad && !hasSoup && !hasMain) {
+        return 'soup_main';
+    }
+    
+    // 5. Выбран напиток/десерт, но не выбрано главное блюдо
+    if ((hasDrink || hasDessert) && !hasMain && !hasSoup) {
+        return 'main';
+    }
+    
+    return 'default';
+}
+
 function showNotification(selectedDishes) {
-    // тип уведомления
     const notificationType = getNotificationType(selectedDishes);
     
-	
     const overlay = document.createElement('div');
     overlay.className = 'notification-overlay';
     
@@ -127,7 +125,6 @@ function showNotification(selectedDishes) {
         document.body.removeChild(overlay);
     });
     
-
     overlay.addEventListener('click', function(e) {
         if (e.target === overlay) {
             document.body.removeChild(overlay);
@@ -135,40 +132,69 @@ function showNotification(selectedDishes) {
     });
 }
 
-function getNotificationType(selected) {
-    const hasSoup = selected.soup;
-    const hasMain = selected.main;
-    const hasSalad = selected.salad;
-    const hasDrink = selected.drink;
-    const hasDessert = selected.dessert;
-    
-    // 1. Ничего не выбрано
-    if (!hasSoup && !hasMain && !hasSalad && !hasDrink && !hasDessert) {
-        return 'nothing';
+// Функция для получения сообщения о комбо (используется в order-page.js)
+function getComboMessage(selected) {
+    if (!selected.drink) {
+        return "Для оформления заказа необходимо выбрать напиток.";
     }
     
-    // 2. Выбраны все необходимые блюда, кроме напитка
-    if ((hasSoup && hasMain && hasSalad && !hasDrink) ||
-        (hasSoup && hasMain && !hasSalad && !hasDrink) ||
-        (hasSoup && !hasMain && hasSalad && !hasDrink) ||
-        (!hasSoup && hasMain && hasSalad && !hasDrink) ||
-        (!hasSoup && hasMain && !hasSalad && !hasDrink)) {
-        return 'drink';
+    if (!selected.main && !selected.soup && !selected.salad) {
+        return "Для оформления заказа необходимо выбрать хотя бы одно основное блюдо (суп, главное блюдо или салат).";
     }
     
-    // 3. Выбран суп, но не выбраны главное блюдо/салат/стартер
-    if (hasSoup && !hasMain && !hasSalad) {
-        return 'main_salad';
+    if (!selected.main && !selected.soup) {
+        return "Вы выбрали только салат и напиток. Добавьте суп или главное блюдо для завершения комбо.";
     }
     
-    // 4. Выбран салат/стартер, но не выбраны суп/главное блюдо
-    if (hasSalad && !hasSoup && !hasMain) {
-        return 'soup_main';
+    if (!selected.main && !selected.salad) {
+        return "Вы выбрали только суп и напиток. Добавьте главное блюдо или салат для завершения комбо.";
     }
     
-    // 5. Выбран напиток/десерт, но не выбрано главное блюдо
-    if ((hasDrink || hasDessert) && !hasMain && !hasSoup) {
-        return 'main';
+    if (!selected.soup && !selected.salad) {
+        return "Вы выбрали только главное блюдо и напиток. Добавьте суп или салат для завершения комбо.";
     }
-    return 'default';
+    
+    return "Выбранные блюда не соответствуют ни одному из доступных комбо. Пожалуйста, проверьте состав заказа.";
+}
+
+// Валидация формы на странице "Собрать ланч" (если форма там осталась)
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('form');
+    
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const isValid = validateOrder();
+            
+            if (isValid) {
+                form.submit();
+            }
+        });
+    }
+});
+
+function validateOrder() {
+    const selectedDishes = getSelectedDishes();
+    
+    const isValidCombo = checkCombo(selectedDishes);
+    
+    if (!isValidCombo) {
+        showNotification(selectedDishes);
+        return false;
+    }
+    
+    return true;
+}
+
+function getSelectedDishes() {
+    const selected = {
+        soup: document.getElementById('BuySoup') && document.getElementById('BuySoup').value !== 'none',
+        main: document.getElementById('BuyMain') && document.getElementById('BuyMain').value !== 'none',
+        salad: document.getElementById('BuySalad') && document.getElementById('BuySalad').value !== 'none',
+        drink: document.getElementById('BuyDrink') && document.getElementById('BuyDrink').value !== 'none',
+        dessert: document.getElementById('BuyDessert') && document.getElementById('BuyDessert').value !== 'none'
+    };
+    
+    return selected;
 }

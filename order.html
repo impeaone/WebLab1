@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Construct - Оформить заказ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700" rel="stylesheet">
+    <link rel="stylesheet" href="css/make_lunch.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Food Construct</h1>
+            <nav>
+				<a href="index.html">О нас</a>
+				<a href="make_lunch.html">Собрать ланч</a>
+				<a href="order.html">Оформить заказ</a>
+				<a href="orders.html">Мои заказы</a>
+				<a href="#">Контакты</a>
+			</nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="order-composition">
+            <h2 class="Horder">Состав заказа</h2>
+            <div id="orderItems" class="dishes-container">
+            </div>
+            <div id="emptyOrder" class="empty-order">
+                <p>Ничего не выбрано. Чтобы добавить блюда в заказ, перейдите на страницу <a href="make_lunch.html">Собрать ланч</a>.</p>
+            </div>
+        </section>
+		<h2 class="Horder">Оформление заказа</h2>
+        
+        <form id="form" method="POST">
+            <div class="order-section">
+                <div class="order-form" id="OrderSoup">
+                    <label for="soup" style="font-weight: bold;">Суп </label>
+                    <p id="soup">Не выбран</p>
+                    <input type='hidden' id="BuySoup" name="soup_id" value="">
+                </div>
+                <div class="order-form" id="OrderMain">
+                    <label for="bludo" style="font-weight: bold;">Главное блюдо</label>
+                    <p id="bludo">Не выбрано</p>
+                    <input type='hidden' id="BuyMain" name="main_course_id" value="">
+                </div>
+                <div class="order-form" id="OrderDrink">
+                    <label for="drink" style="font-weight: bold;">Напиток</label>
+                    <p id="drink">Не выбран</p>
+                    <input type='hidden' id="BuyDrink" name="drink_id" value="">
+                </div>
+                <div class="order-form" id="OrderSalad">
+                    <label for="salad" style="font-weight: bold;">Салат/Стартер</label>
+                    <p id="salad">Не выбран</p>
+                    <input type='hidden' id="BuySalad" name="salad_id" value="">
+                </div>
+                <div class="order-form" id="OrderDessert">
+                    <label for="dessert" style="font-weight: bold;">Десерт</label>
+                    <p id="dessert">Не выбран</p>
+                    <input type='hidden' id="BuyDessert" name="dessert_id" value="">
+                </div>
+                <div class="order-form" id="OrderCost">
+                    <label for="cost" style="font-weight: bold;">Итоговая стоимость</label>
+                    <p id="cost">0 р</p>
+                </div>
+            </div>
+            <div class="order-section">
+                <div class="customer-data">
+                    <h3>Ваши данные</h3>
+                    <div class="order-form">
+                        <label for="name">Имя *</label>
+                        <input type="text" id="name" name="full_name" required placeholder="Ваше имя">
+                    </div>
+                    <div class="order-form">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="Ваш Email">
+                    </div>
+                    <div class="checkbox-form">
+                        <input type="checkbox" name="subscribe" id="subscribe" value="1">
+                        <label for="subscribe">Получать информацию о скидках и акциях</label>
+                    </div>
+                    <div class="order-form">
+                        <label for="phone">Номер телефона *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="Ваш номер телефона">
+                    </div>
+                    <div class="order-form">
+                        <label for="address">Адрес доставки *</label>
+                        <input type="text" id="address" name="delivery_address" required placeholder="Укажите адрес доставки">
+                        <label for="address" class="deliverMoscow">Доставка только по Москве</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Время доставки:</label>
+                        <div class="radio-option">
+                            <input type="radio" id="time-asap" name="delivery_type" value="now" checked>
+                            <label for="time-asap">Как можно скорее</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="time-specified" name="delivery_type" value="by_time">
+                            <label for="time-specified">К указанному времени</label>
+                        </div>
+                        <div id="delivery-time-container" style="display: none;">
+                            <label for="delivery-time">Укажите время доставки</label>
+                            <input type="time" id="delivery-time" name="delivery_time" min="07:00" max="23:00" step="300">
+                        </div>
+                    </div>
+                    
+                    <div class="order-form">
+                        <label for="comment">Комментарий к заказу</label>
+                        <textarea id="comment" name="comment" placeholder="Ваши пожелания или особые указания"></textarea>
+                    </div>
+                    
+                    <div class="buttons"> 
+                        <button class="reset-button" type="button" id="resetOrder">Очистить заказ</button>
+                        <button class="submit-button" type="button" id="submitOrderBtn">Отправить заказ</button>
+                    </div>
+                </div>
+            </div>
+        </form> <!-- ЗАКРЫВАЮЩИЙ ТЕГ FORM -->
+    </main>
+
+    <footer>
+        <p>© 2023 Food Construct. Все права защищены.</p>
+        <div class="contact-info">
+            <p>Позвонить нам: <a href="tel:+70000000000">+7-000-000-00-00</a></p>
+        </div>
+    </footer>
+
+    <script src="./scripts/storage.js"></script>
+    <script src="./scripts/validation.js"></script>
+    <script src="./scripts/dishes.js"></script>
+    <script src="./scripts/order-page.js"></script>
+</body>
+</html>
