@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Construct - Доставка бизнес-ланчей</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="./css/landing.css">
+
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-danger fs-3" href="#">Food Construct</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#hero">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Преимущества</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cta">Заказать</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Контакты</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-danger ms-2" href="make_lunch.html">Собрать ланч</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Вкусные бизнес-ланчи с доставкой в офис</h1>
+                    <p class="lead mb-4">Food Construct - это свежие, горячие обеды, которые привозят точно в срок. Соберите идеальный ланч по вашему вкусу!</p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="#cta" class="btn btn-light btn-lg px-4">Заказать сейчас</a>
+                        <a href="./make_lunch.html" class="btn btn-outline-light btn-lg px-4">Собрать ланч</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="./assets/landing.png" 
+                         alt="Бизнес-ланчи" class="img-fluid rounded-3 shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="display-5 fw-bold mb-3">Почему выбирают Food Construct?</h2>
+                    <p class="lead text-muted">Мы делаем доставку обедов удобной и вкусной</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm card-hover">
+                        <div class="card-body text-center p-4">
+                            <i class="bi bi-alarm feature-icon"></i>
+                            <h5 class="card-title">Точно в срок</h5>
+                            <p class="card-text text-muted">Привозим ваш обед к назначенному времени без опозданий</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm card-hover">
+                        <div class="card-body text-center p-4">
+                            <i class="bi bi-shield-check feature-icon"></i>
+                            <h5 class="card-title">Качественные продукты</h5>
+                            <p class="card-text text-muted">Используем только свежие ингредиенты от проверенных поставщиков</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm card-hover">
+                        <div class="card-body text-center p-4">
+                            <i class="bi bi-egg-fried feature-icon"></i>
+                            <h5 class="card-title">Разнообразное меню</h5>
+                            <p class="card-text text-muted">Более 50 блюд на выбор - супы, салаты, горячее и десерты</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm card-hover">
+                        <div class="card-body text-center p-4">
+                            <i class="bi bi-truck feature-icon"></i>
+                            <h5 class="card-title">Бесплатная доставка</h5>
+                            <p class="card-text text-muted">Доставляем по всему городу с 7:00 до 23:00 бесплатно</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Статистика -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-md-3 col-6">
+                    <h3 class="text-danger fw-bold display-6">500+</h3>
+                    <p class="text-muted">Довольных клиентов</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <h3 class="text-danger fw-bold display-6">1000+</h3>
+                    <p class="text-muted">Доставленных обедов</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <h3 class="text-danger fw-bold display-6">50+</h3>
+                    <p class="text-muted">Блюд в меню</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <h3 class="text-danger fw-bold display-6">98%</h3>
+                    <p class="text-muted">Точных доставок</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="cta-section">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h2 class="display-5 fw-bold mb-4">Готовы попробовать наши бизнес-ланчи?</h2>
+                    <p class="lead mb-4">Соберите свой идеальный обед из свежих и вкусных блюд</p>
+                    <a href="make_lunch.html" class="btn btn-light btn-lg px-5 py-3 fs-5">
+                        <i class="bi bi-arrow-right me-2"></i>Собрать ланч
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты и форма -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="display-6 fw-bold mb-4">Свяжитесь с нами</h2>
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-telephone text-danger fs-4 me-3"></i>
+                                <div>
+                                    <h5 class="mb-1">Телефон</h5>
+                                    <p class="text-muted mb-0">+7 (000) 000-00-00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-envelope text-danger fs-4 me-3"></i>
+                                <div>
+                                    <h5 class="mb-1">Email</h5>
+                                    <p class="text-muted mb-0">info@foodconstruct.ru</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-clock text-danger fs-4 me-3"></i>
+                                <div>
+                                    <h5 class="mb-1">Время работы</h5>
+                                    <p class="text-muted mb-0">Пн-Пт: 7:00-23:00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-geo-alt text-danger fs-4 me-3"></i>
+                                <div>
+                                    <h5 class="mb-1">Адрес</h5>
+                                    <p class="text-muted mb-0">г. Москва, ул. Примерная, д. 123</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="card shadow border-0">
+                        <div class="card-body p-4">
+                            <h3 class="card-title mb-4">Оставьте заявку</h3>
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="name" class="form-label">Имя</label>
+                                        <input type="text" class="form-control" id="name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="phone" class="form-label">Телефон</label>
+                                        <input type="tel" class="form-control" id="phone" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="message" class="form-label">Сообщение</label>
+                                        <textarea class="form-control" id="message" rows="4" placeholder="Расскажите о ваших пожеланиях..."></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-custom w-100 py-2">Отправить заявку</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-3">Food Construct</h5>
+                    <p class="text-light">Доставка вкусных и свежих бизнес-ланчей в офис. Соберите свой идеальный обед!</p>
+                </div>
+                <div class="col-lg-3 col-6 mb-4 mb-lg-0">
+                    <h6 class="fw-bold mb-3">Навигация</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#hero" class="text-light text-decoration-none">Главная</a></li>
+                        <li><a href="#features" class="text-light text-decoration-none">Преимущества</a></li>
+                        <li><a href="#cta" class="text-light text-decoration-none">Заказать</a></li>
+                        <li><a href="#contact" class="text-light text-decoration-none">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <h6 class="fw-bold mb-3">Ссылки</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="make_lunch.html" class="text-light text-decoration-none">Собрать ланч</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Меню</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Доставка</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Акции</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 Food Construct. Все права защищены.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="d-flex gap-3 justify-content-md-end justify-content-start">
+                        <a href="#" class="text-light fs-5"><i class="bi bi-telegram"></i></a>
+                        <a href="#" class="text-light fs-5"><i class="bi bi-whatsapp"></i></a>
+                        <a href="#" class="text-light fs-5"><i class="bi bi-vk"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

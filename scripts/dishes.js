@@ -3,7 +3,7 @@ const API_BASE = 'https://edu.std-900.ist.mospolytech.ru/labs/api';
 let dishes = [];
 
 function getDishes() {
-    return fetch(`${API_BASE}/dishes?api_key=${apiKey}`)
+    return fetch(`http://lab7-api.std-900.ist.mospolytech.ru/api/dishes`)
         .then(res => {
             if (!res.ok) {
                 throw new Error('Ошибка загрузки данных');
@@ -27,13 +27,12 @@ async function initDishes() {
         return 0;
     });
 
-    if (typeof displayDishes === 'function') {
-        displayDishes();
-    }
+
+    displayDishes();
     
-    if (typeof loadOrderFromStorage === 'function') {
-        loadOrderFromStorage();
-    }
+
+    loadOrderFromStorage();
+
     
     console.log('Блюда загружены:', dishes);
 }

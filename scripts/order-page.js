@@ -1,6 +1,5 @@
 let allDishes = [];
 
-// Определяем функции, если они не существуют (для обратной совместимости)
 if (typeof getCurrentOrder === 'undefined') {
     window.getCurrentOrder = function() {
         try {
