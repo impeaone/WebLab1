@@ -3,7 +3,7 @@ const API_BASE = 'https://edu.std-900.ist.mospolytech.ru/labs/api';
 let dishes = [];
 
 function getDishes() {
-    return fetch(`http://lab7-api.std-900.ist.mospolytech.ru/api/dishes`)
+    return fetch(`https://edu.std-900.ist.mospolytech.ru/labs/api/dishes`)
         .then(res => {
             if (!res.ok) {
                 throw new Error('Ошибка загрузки данных');
@@ -39,4 +39,5 @@ async function initDishes() {
 
 document.addEventListener('DOMContentLoaded', function() {
     initDishes();
+
 });
