@@ -1,17 +1,17 @@
 		.hero-section {
-            background: linear-gradient(135deg, #f44336 0%, #ff9800 100%);
+            background: linear-gradient(135deg, rgba(239, 196, 163, 1) 0%, rgba(197, 127, 84, 1) 100%);
             color: white;
             padding: 100px 0;
         }
         
         .feature-icon {
             font-size: 3rem;
-            color: #f44336;
+            color: rgba(233, 108, 47, 1);
             margin-bottom: 1rem;
         }
         
         .cta-section {
-            background: linear-gradient(135deg, #ff9800 0%, #f44336 100%);
+            background: linear-gradient(135deg, rgba(197, 127, 84, 1) 0%, rgba(239, 196, 163, 1) 100%);
             color: white;
             padding: 80px 0;
         }
@@ -22,7 +22,7 @@
         }
         
         .card-hover {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease;
         }
         
         .card-hover:hover {
@@ -48,7 +48,14 @@
         }
         
         .footer {
-            background: #333;
+            background: rgba(163, 89, 50, 1);
             color: white;
             padding: 40px 0;
         }
+		
+		.stat{
+			color: rgba(233, 108, 47, 1);
+		}
+		.btn-stat{
+			background: rgba(233, 108, 47, 1);
+		}
